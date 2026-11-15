@@ -1,0 +1,31 @@
+{
+  "name": "kiro-event-viewer",
+  "version": "0.1.0",
+  "displayName": "Kiro Event Viewer",
+  "description": "A late-90s style event viewer: Kiro Crew's System and Security logs, plus an Application log any of your services can write to with one command.",
+  "author": "mimjasov",
+  "iconPath": "assets/icon.png",
+  "tags": ["events", "logs", "ops", "retro"],
+  "permissions": {
+    "api": [
+      "/api/apps/kiro-event-viewer",
+      "/api/apps/kiro-event-viewer/*"
+    ],
+    "storage": true
+  },
+  "backend": {
+    "entryPoint": "backend/server.py",
+    "port": "auto",
+    "healthCheck": "/health"
+  },
+  "ui": {
+    "entry": "index.mjs",
+    "pages": [
+      {
+        "route": "/apps/kiro-event-viewer",
+        "label": "Event Viewer",
+        "icon": "ScrollText"
+      }
+    ]
+  }
+}
